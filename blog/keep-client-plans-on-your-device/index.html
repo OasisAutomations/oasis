@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keeping client plans on your own device · Oasis Automations Blog</title>
+<meta name="description" content="Why my takeoff tool never uploads drawings, how local browser storage works in plain terms, and the tradeoffs you should know about.">
+<meta property="og:title" content="Keeping client plans on your own device">
+<meta property="og:description" content="Why my takeoff tool never uploads drawings, how local browser storage works in plain terms, and the tradeoffs you should know about.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://oasisautomations.github.io/oasis/blog/assets/og.jpg">
+<link rel="icon" href="../assets/badge.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <nav class="site-nav"><a href="../../">Home</a><a href="../" aria-current="page">Blog</a><a href="https://oasisautomations.github.io/daniel-takeoff/">Daniel Takeoff</a></nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="narrow">
+    <div class="meta">Oct 21, 2026 · 2 min read<span class="tag">Privacy</span></div>
+    <h1>Keeping client plans on your own device</h1>
+    <p class="dek">Why my takeoff tool never uploads drawings, how local browser storage works in plain terms, and the tradeoffs you should know about.</p>
+  </div>
+</div>
+
+<main class="narrow">
+<article>
+<p>When I started building my own takeoff tool, one decision came first, before features: client plans would stay on the device. No account, no upload, no copy sitting on a server somewhere.</p>
+<p>This post explains why, how it works in plain terms, and the tradeoffs, because there are some.</p>
+
+<h2>Why it matters</h2>
+<p>Construction drawings aren't public documents. They belong to an owner, an architect, or a general contractor, and they're shared with you to do a specific job. Some show floor plans of private homes. Some show the security layout of a commercial building. Bid numbers are sensitive too. When you drop a plan set into a free online tool, it's worth asking where that file ends up, who can see it, and how long it stays there.</p>
+<p>I didn't want to have to answer those questions for every file, so I built the app so the question doesn't come up.</p>
+
+<h2>How "on your device" works</h2>
+<p>Daniel Takeoff is a web app, but after it loads it doesn't send your work anywhere. Browsers have a built-in storage area (it's called IndexedDB) that a website can use to save data on your own computer or tablet. When you open a PDF, the app reads it right there in the browser, and your projects, measurements, and items are saved in that local storage.</p>
+<ul>
+  <li>The PDF is never uploaded. There's no server on my end that receives it.</li>
+  <li>There's no login, so there's no account to break into.</li>
+  <li>After the first visit it works offline, which also means it doesn't need to "phone home" to do its job.</li>
+</ul>
+
+<h2>The tradeoffs</h2>
+<p>Keeping things local isn't free. You should know what you give up:</p>
+<ul>
+  <li><strong>No automatic sync.</strong> A project you start on the laptop isn't on the tablet unless you move it yourself.</li>
+  <li><strong>Backups are your job.</strong> If you clear your browser data, or the device dies, the saved projects go with it. Export your takeoffs (CSV/Excel or print to PDF) when they matter.</li>
+  <li><strong>The device still has to be secure.</strong> Local storage keeps files off other people's servers, but it doesn't protect a shared laptop with no password. Lock your devices.</li>
+  <li><strong>Private browsing windows</strong> usually throw that storage away when you close them. Use a normal window for real work.</li>
+</ul>
+
+<h2>A simple routine that works</h2>
+<ol>
+  <li>Use one browser on one main device for real projects.</li>
+  <li>Export the quantity sheet when a takeoff is finished, and file it with the job wherever your company keeps job files.</li>
+  <li>When a job is closed out, delete the project from the app so old plans aren't sitting around.</li>
+  <li>Use sample PDFs, not client plans, when you're testing or showing the tool to someone.</li>
+</ol>
+
+<div class="note">This is how my own tools handle files. It isn't legal advice, and it doesn't replace whatever document policy your company or your client has. If they have rules about where plans can live, those rules win.</div>
+
+<h2>The bigger idea</h2>
+<p>A lot of small business tools don't need the cloud. A checklist, a calculator, or a quantity sheet can run entirely on your own device, which keeps things simpler and keeps other people's information where it belongs. When I build something for someone, local-first is where I start, unless there's a real reason the data needs to be shared.</p>
+<p>— Daniel</p>
+</article>
+<div class="post-foot"><a href="../">← All posts</a><a href="../../">Oasis Automations home</a></div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <span>Small, practical tools for everyday work · <a href="../">Blog</a></span>
+  </div>
+</footer>
+</body>
+</html>

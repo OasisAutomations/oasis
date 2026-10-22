@@ -1,0 +1,55 @@
+<!-- POST TEMPLATE: copy to blog/<your-slug>/index.html and replace every {{...}}. See blog/README.md -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}} · Oasis Automations Blog</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="{{SUMMARY}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{SUMMARY}}">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://oasisautomations.github.io/oasis/blog/assets/og.jpg">
+<link rel="icon" href="../assets/badge.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <nav class="site-nav"><a href="../../">Home</a><a href="../" aria-current="page">Blog</a><a href="https://oasisautomations.github.io/daniel-takeoff/">Daniel Takeoff</a></nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="narrow">
+    <div class="meta">{{DATE e.g. Nov 4, 2026}} · {{N}} min read<span class="tag">{{TAG}}</span></div>
+    <h1>{{TITLE}}</h1>
+    <p class="dek">{{SUMMARY}}</p>
+  </div>
+</div>
+
+<main class="narrow">
+<article>
+<!-- Write the post here. Plain HTML: <p>, <h2>, <ul><li>, <ol><li>, <blockquote>, <a href="">.
+     Optional boxed note: <div class="note">...</div> -->
+<p>First paragraph.</p>
+<h2>A section heading</h2>
+<p>More text.</p>
+<p>— Daniel</p>
+</article>
+<div class="post-foot"><a href="../">← All posts</a><a href="../../">Oasis Automations home</a></div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <span>Small, practical tools for everyday work · <a href="../">Blog</a></span>
+  </div>
+</footer>
+</body>
+</html>

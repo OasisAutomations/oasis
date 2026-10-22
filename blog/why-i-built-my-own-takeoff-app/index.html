@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why I built my own takeoff app · Oasis Automations Blog</title>
+<meta name="description" content="I measure plans for a living. Here is why I built a small browser takeoff tool for myself, what it does, and what it does not do.">
+<meta property="og:title" content="Why I built my own takeoff app">
+<meta property="og:description" content="I measure plans for a living. Here is why I built a small browser takeoff tool for myself, what it does, and what it does not do.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://oasisautomations.github.io/oasis/blog/assets/og.jpg">
+<link rel="icon" href="../assets/badge.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <nav class="site-nav"><a href="../../">Home</a><a href="../" aria-current="page">Blog</a><a href="https://oasisautomations.github.io/daniel-takeoff/">Daniel Takeoff</a></nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="narrow">
+    <div class="meta">Oct 21, 2026 · 2 min read<span class="tag">Takeoffs</span></div>
+    <h1>Why I built my own takeoff app</h1>
+    <p class="dek">I measure plans for a living. Here is why I built a small browser takeoff tool for myself, what it does, and what it does not do.</p>
+  </div>
+</div>
+
+<main class="narrow">
+<article>
+<p>I do construction takeoffs for a living. Most days that means opening a set of plans, setting the scale, and measuring: linear feet of wall, square feet of board, counts of doors and hardware. Then it all goes into a spreadsheet so someone can price it.</p>
+<p>The industry-standard tools are good. I use Bluebeam and I'm not here to knock it. But I kept running into the same small frictions, and at some point I wondered whether I could build something that fit the way I actually work. So I did. It's called Daniel Takeoff, and it runs in a web browser.</p>
+
+<h2>What was bugging me</h2>
+<ul>
+  <li><strong>Getting numbers out was more work than getting them in.</strong> Measuring was fast. Turning the markups into a clean quantity list I could paste into Excel took extra steps every time.</li>
+  <li><strong>Not every job needs prices.</strong> Sometimes I just need quantities, a hardware-only count for example. I wanted a sheet that shows exactly that, without empty price columns and a $0.00 grand total.</li>
+  <li><strong>I wanted it on the tablet and the laptop.</strong> Some reviews happen at a desk, some don't. A browser app works on both without installing anything.</li>
+  <li><strong>Plans are other people's property.</strong> I didn't want client drawings going up to a server I don't control. (More on that in <a href="../keep-client-plans-on-your-device/">a separate post</a>.)</li>
+</ul>
+
+<h2>What it does today</h2>
+<p>Nothing exotic. You load a PDF, calibrate the scale, and measure lengths, areas, and counts. Each measurement belongs to an item, and the item list is the takeoff. A few things I added because I needed them:</p>
+<ul>
+  <li>A <strong>"Show prices" toggle</strong>. With it off, the sheet, the printout, and the CSV/Excel export are quantities only. It turns on by itself once you add a price to any item.</li>
+  <li><strong>Whole numbers for counted items</strong> (each, pair, set) and two decimals for linear and square feet, so the sheet reads the way an estimator expects.</li>
+  <li><strong>Sharp zoom.</strong> Early versions got blurry when you zoomed in tight. Now it redraws the part of the plan you're looking at, at full resolution, once you stop zooming.</li>
+  <li><strong>Voice entry</strong> for quick line items when my hands are busy.</li>
+  <li>Everything is <strong>saved in the browser on your own device</strong>. There's no account and no upload.</li>
+</ul>
+
+<h2>How I built it</h2>
+<p>I'm not a trained software developer. My background is estimating, bookkeeping, and a lot of Excel. I built this with an AI assistant as a coding partner: I describe what I need in plain construction terms, test it on real drawings, and send back what's wrong ("the counts are blurry at 6x", "don't show $0.00 when there's no price"). It's a lot of small loops. The value I bring is knowing what a takeoff is supposed to look like when it's done.</p>
+
+<h2>What it isn't</h2>
+<p>It isn't a Bluebeam replacement for a whole estimating department. There's no multi-user collaboration and no cloud sync, and it hasn't been tested on every kind of plan set out there. It's a focused tool that does the takeoffs I do, the way I like to do them. If that's useful to you too, great. If not, that's fine.</p>
+
+<h2>Try it</h2>
+<p>It's free to open and poke at: <a href="https://oasisautomations.github.io/daniel-takeoff/">Daniel Takeoff</a>. Use a sample PDF rather than real client plans until you're comfortable with how local storage works. If something breaks or you wish it did something differently, I'd like to hear about it.</p>
+<p>— Daniel</p>
+</article>
+<div class="post-foot"><a href="../">← All posts</a><a href="../../">Oasis Automations home</a></div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="brand" href="../../"><img src="../assets/mark.svg" alt=""><span class="wm"><b>OASIS</b><span>AUTOMATIONS</span></span></a>
+    <span>Small, practical tools for everyday work · <a href="../">Blog</a></span>
+  </div>
+</footer>
+</body>
+</html>
