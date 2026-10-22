@@ -1,0 +1,15 @@
+{
+  "name": "Oasis Automations",
+  "short_name": "Oasis",
+  "description": "Learn to build AI agents and automations with Daniel.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#1a2229",
+  "theme_color": "#1a2229",
+  "icons": [
+    {"src": "assets/logo/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "assets/logo/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "assets/logo/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
